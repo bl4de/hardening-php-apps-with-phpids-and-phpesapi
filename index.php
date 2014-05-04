@@ -8,9 +8,16 @@ try {
         <meta charset="utf8">
         <title>Hardening PHP Applications Sample App</title>
     </head>
-
     <body>
-        <?php $Application->displayPage( $_GET['p'] ); ?>
+        <nav>
+            <a href="?p=home">Home page</a> |
+            <a href="?p=list">List records</a> |
+            <a href="?p=add">Add new</a> |
+            <a href="?p=about">About</a>
+        </nav>
+        <div class="content">
+            <?php $Application->displayPage( isset($_GET['p']) ? $_GET['p'] : "" ); ?>
+        </div>
     </body>
 </html>
 <?php
