@@ -11,6 +11,7 @@ $list = $this->getRows( $this->execute("SELECT * FROM entry") );
 			<th>ID</th>
 			<th>Name</th>
 			<th>Value</th>
+			<th>Options</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -19,6 +20,11 @@ $list = $this->getRows( $this->execute("SELECT * FROM entry") );
 				<td><?= $item->id; ?></td>
 				<td><?= $item->name; ?></td>
 				<td><?= $item->value; ?></td>
+				<td>
+					<a href="?p=details&id=<?= $item->id; ?>">details</a>
+					<a href="?p=edit&id=<?= $item->id; ?>">edit</a>
+					<a href="?p=delete&id=<?= $item->id; ?>">delete</a>
+				</td>
 			</tr>
 		<?php } ?>
 		</tbody>
