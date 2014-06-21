@@ -31,7 +31,16 @@ class Application {
     public function execute( $statement ) {
         return mysql_query( $statement, $this->db );
     }
+
+	public function getRows( $result ) {
+		if ($result) {
+			$rows = array();
+			while ($row = @mysql_fetch_object($result)) {
+				array_push($rows, $row);
+			}
+			return $rows;
+		}
+		return false;
+	}
 }
 
-$Application = new Application();
-$Application->execute( "SELECT * FROM entry" );

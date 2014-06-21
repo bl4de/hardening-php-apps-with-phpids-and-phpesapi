@@ -1,5 +1,6 @@
 <?php
 require_once 'bootstrap.php';
+$Application = new Application();
 try {
 ?>
 <!DOCTYPE html>
