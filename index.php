@@ -1,5 +1,7 @@
 <?php
+require_once 'esapi/src/ESAPI.php';
 require_once 'bootstrap.php';
+
 $Application = new Application();
 try {
 	?>

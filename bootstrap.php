@@ -23,7 +23,6 @@ class Application {
             include_once $pageName . ".inc.php";
         } else {
             include_once "home.inc.php";
-            // throw new Exception("File not found", 1);
         }
     }
 
