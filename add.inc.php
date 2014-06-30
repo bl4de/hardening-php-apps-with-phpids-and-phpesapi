@@ -11,6 +11,12 @@ $name = (isset($_POST['name']) && $_POST['name'] != "") ? $_POST['name'] : "";
 $error = "";
 
 if (!empty($_POST)) {
+	if ($this->validator->isValidIsoCode("ISO code", $_POST['value'], 2, 2) ) {
+		$value = strtoupper($_POST['value']);
+	} else {
+		$value = "??";
+	}
+
 	$q = 'INSERT INTO entry (name, value) VALUES ("' . $name . '", "' . $value . '")';
 	$res = $this->execute($q);
 
